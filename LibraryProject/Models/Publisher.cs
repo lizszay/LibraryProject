@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LibraryProject;
+namespace LibraryProject.Models;
 
 public partial class Publisher
 {

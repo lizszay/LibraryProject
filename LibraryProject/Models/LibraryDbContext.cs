@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryProject;
+namespace LibraryProject.Models;
 
 public partial class LibraryDbContext : DbContext
 {
@@ -67,17 +67,17 @@ public partial class LibraryDbContext : DbContext
             entity.Property(e => e.TotalCopies).HasColumnName("total_copies");
             entity.Property(e => e.YearPublication).HasColumnName("year_publication");
 
-            entity.HasOne(d => d.IdAuthorNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.Author).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdAuthor)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_id_author_fkey");
 
-            entity.HasOne(d => d.IdGenreNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.Genre).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdGenre)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_id_genre_fkey");
 
-            entity.HasOne(d => d.IdPublisherNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.Publisher).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdPublisher)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_id_publisher_fkey");
@@ -97,16 +97,16 @@ public partial class LibraryDbContext : DbContext
             entity.Property(e => e.IdStatus).HasColumnName("id_status");
             entity.Property(e => e.IdUser).HasColumnName("id_user");
 
-            entity.HasOne(d => d.IdBookNavigation).WithMany(p => p.BookLoans)
+            entity.HasOne(d => d.Book).WithMany(p => p.BookLoans)
                 .HasForeignKey(d => d.IdBook)
                 .HasConstraintName("book_loans_id_book_fkey");
 
-            entity.HasOne(d => d.IdStatusNavigation).WithMany(p => p.BookLoans)
+            entity.HasOne(d => d.Status).WithMany(p => p.BookLoans)
                 .HasForeignKey(d => d.IdStatus)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("book_loans_id_status_fkey");
 
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.BookLoans)
+            entity.HasOne(d => d.User).WithMany(p => p.BookLoans)
                 .HasForeignKey(d => d.IdUser)
                 .HasConstraintName("book_loans_id_user_fkey");
         });
@@ -173,7 +173,7 @@ public partial class LibraryDbContext : DbContext
             entity.Property(e => e.Login).HasColumnName("login");
             entity.Property(e => e.PasswordHash).HasColumnName("password_hash");
 
-            entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("users_id_role_fkey");

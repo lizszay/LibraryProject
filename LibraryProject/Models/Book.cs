@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LibraryProject;
+namespace LibraryProject.Models;
 
 public partial class Book
 {
@@ -29,9 +29,9 @@ public partial class Book
 
     public virtual ICollection<BookLoan> BookLoans { get; set; } = new List<BookLoan>();
 
-    public virtual Author IdAuthorNavigation { get; set; } = null!;
+    public virtual Author Author { get; set; } = null!;
 
-    public virtual Genre IdGenreNavigation { get; set; } = null!;
+    public virtual Genre Genre { get; set; } = null!;
 
-    public virtual Publisher IdPublisherNavigation { get; set; } = null!;
+    public virtual Publisher Publisher { get; set; } = null!;
 }

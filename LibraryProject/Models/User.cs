@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LibraryProject;
+namespace LibraryProject.Models;
 
 public partial class User
 {
@@ -17,5 +17,5 @@ public partial class User
 
     public virtual ICollection<BookLoan> BookLoans { get; set; } = new List<BookLoan>();
 
-    public virtual Role IdRoleNavigation { get; set; } = null!;
+    public virtual Role Role { get; set; } = null!;
 }
