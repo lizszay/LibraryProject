@@ -15,7 +15,7 @@ namespace LibraryProject
         {
             if (String.IsNullOrWhiteSpace(txtLogin.Text) || String.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                MessageBox.Show("¬ведите логин и пароль",
+                MessageBox.Show("¬ведите логин и пароль1",
                     "ќшибка",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
