@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panelTop = new Panel();
+            btnBack = new Button();
             lblUserName = new Label();
             btnLogout = new Button();
-            btnBack = new Button();
             dgvBooks = new DataGridView();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBooks).BeginInit();
@@ -48,6 +48,21 @@
             panelTop.Padding = new Padding(5);
             panelTop.Size = new Size(984, 40);
             panelTop.TabIndex = 2;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.FromArgb(74, 111, 165);
+            btnBack.Dock = DockStyle.Left;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(5, 5);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(150, 30);
+            btnBack.TabIndex = 7;
+            btnBack.Text = "Назад";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += BtnBack_Click;
             // 
             // lblUserName
             // 
@@ -72,20 +87,7 @@
             btnLogout.TabIndex = 5;
             btnLogout.Text = "Выйти";
             btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // btnBack
-            // 
-            btnBack.BackColor = Color.FromArgb(74, 111, 165);
-            btnBack.Dock = DockStyle.Left;
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(5, 5);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(150, 30);
-            btnBack.TabIndex = 7;
-            btnBack.Text = "Назад";
-            btnBack.UseVisualStyleBackColor = false;
+            btnLogout.Click += BtnLogout_Click;
             // 
             // dgvBooks
             // 
@@ -115,7 +117,7 @@
             Controls.Add(dgvBooks);
             Controls.Add(panelTop);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormBooks";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Список книг";
