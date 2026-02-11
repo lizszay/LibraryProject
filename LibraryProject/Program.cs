@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using LibraryProject.Models;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace LibraryProject
 {
@@ -56,7 +57,7 @@ namespace LibraryProject
                         case DialogResult.Yes: // Книги
                             exitProgram = ShowBooksForUser(user);
                             break;
-                        case DialogResult.No: // Заказы/Выдачи
+                        case DialogResult.No: // /Выдачи
                             exitProgram = ShowLoansForUser(user);
                             break;
                         default: // Выход

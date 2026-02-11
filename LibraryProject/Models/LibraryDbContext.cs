@@ -43,10 +43,10 @@ public partial class LibraryDbContext : DbContext
 
             entity.ToTable("authors");
 
-            entity.HasIndex(e => e.RoleName, "authors_role_name_key").IsUnique();
+            entity.HasIndex(e => e.AuthorName, "authors_author_name_key").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.RoleName).HasColumnName("role_name");
+            entity.Property(e => e.AuthorName).HasColumnName("author_name");
         });
 
         modelBuilder.Entity<Book>(entity =>

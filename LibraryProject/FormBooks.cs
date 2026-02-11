@@ -23,8 +23,8 @@ namespace LibraryProject
             var colPhoto = new DataGridViewImageColumn();
             colPhoto.Name = "colPhoto";
             colPhoto.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            colPhoto.Width = 200;
-            colPhoto.FillWeight = 30;
+            colPhoto.Width = 100;
+            colPhoto.FillWeight = 10;
 
             var colInfo = new DataGridViewTextBoxColumn();
             colInfo.Name = "colInfo";
@@ -108,9 +108,9 @@ namespace LibraryProject
         private object FormatBookInfo(Book book)
         {
             return $"{book.Isbn} | {book.BookName}\n" +
-                $"Автор: {book.Author}\n" +
-                $"Жанр: {book.Genre}\n" +
-                $"Издательство: {book.Publisher}\n" +
+                $"Автор: {book.Author.AuthorName}\n" +
+                $"Жанр: {book.Genre.GenreName}\n" +
+                $"Издательство: {book.Publisher.PublisherName}\n" +
                 $"Год издания: {book.YearPublication}\n" +
                 $"Страниц: {book.CountPages}\n" +
                 $"Всего экземпляров: {book.TotalCopies}\n" +

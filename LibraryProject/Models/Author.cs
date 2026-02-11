@@ -7,7 +7,7 @@ public partial class Author
 {
     public int Id { get; set; }
 
-    public string RoleName { get; set; } = null!;
+    public string AuthorName { get; set; } = null!;
 
     public virtual ICollection<Book> Books { get; set; } = new List<Book>();
 }
