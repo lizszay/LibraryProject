@@ -115,7 +115,7 @@
             Controls.Add(panelTop);
             Controls.Add(dgvLoans);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormLoans";
             Text = "FormLoans";
             panelTop.ResumeLayout(false);

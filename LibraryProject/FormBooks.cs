@@ -44,6 +44,11 @@ namespace LibraryProject
             LoadBooks();
 
             this.Load += (s, e) => dgvBooks.ClearSelection();
+
+            if (IsGuest)
+            {
+                btnBack.Visible = false;
+            }
         }
 
         private void LoadBooks()
@@ -100,7 +105,7 @@ namespace LibraryProject
             }
         }
 
-        private object? FormatBookInfo(Book book)
+        private object FormatBookInfo(Book book)
         {
             return $"{book.Isbn} | {book.BookName}\n" +
                 $"Автор: {book.Author}\n" +

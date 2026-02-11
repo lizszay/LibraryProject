@@ -18,9 +18,9 @@ namespace LibraryProject
         {
             InitializeComponent();
 
-            var colInfo = new DataGridViewTextBoxColumn();
+            /*var colInfo = new DataGridViewTextBoxColumn();
             colInfo.Name = "colInfo";
-            colInfo.
+            colInfo.*/
         }
     }
 }
